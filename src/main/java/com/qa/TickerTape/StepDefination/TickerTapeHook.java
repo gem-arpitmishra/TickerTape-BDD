@@ -24,6 +24,7 @@ public class TickerTapeHook {
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--no-sandbox");
         DriverManager.initializeChrome(options);
+        DriverAction.maximizeToDefaultBrowserSize();
         DriverAction.launchUrl(GemJarUtils.getGemJarConfigData("launch_url"));
         DriverAction.setImplicitTimeOut(Long.parseLong(GemJarGlobalVar.implicitTime));
         DriverAction.setPageLoadTimeOut(Long.parseLong(GemJarGlobalVar.pageTimeout));
